@@ -38,7 +38,7 @@ $ubicaciones = [
     ]
 ];
 
-$pedido = ["Ensalada César", "Pizza Margarita", "Café","gambas"];
+$pedido = ["Ensalada César", "Pizza Margarita", "Café", "gambas"];
 
 // TODO Filtrar platos por disponibilidad, guardando en variable $disponibles
 
@@ -50,45 +50,43 @@ $disponibles = Articulo::filtrarDisponibilidad($menu);
 
 // TODO Función para imprimir una lista de artículos con nombre y precio
 
-function imprimirListaArticulos($articulos){
+function imprimirListaArticulos($articulos)
+{
     //imprimir lista de articulos
     foreach ($articulos as $art) {
         echo $art->getNombre() . "<br>";
         echo $art->getPrecio() . "<br>";
     }
-
-   
 }
 
-
-funtion imprimirPedido($pedido, $menu) {
-    
+//funcion para i
+function imprimirPedido($pedido, $menu)
+{
     foreach ($pedido as $art) {
-        echo $art->getNombre() . "<br>";
-        echo $art->getPrecio() . "<br>";    
-    //tabla HTML que incluya nombre y precio de los artículos
-    echo "<table>";
+        echo "<table>";
         echo "<tr>";
-            echo "<th>Nombre</th>";
-            echo "<th>Precio</th>";
+        echo "<th>Nombre</th>";
+        echo "<th>Precio</th>";
         echo "</tr>";
         foreach ($menu as $art) {
             if ($art->getNombre() == $art->getNombre()) {
                 echo "<tr>";
-                    echo "<td>" . $art->getNombre() . "</td>";
-                    echo "<td>" . $art->getPrecio() . "</td>";
+                echo "<td>" . $art->getNombre() . "</td>";
+                echo "<td>" . $art->getPrecio() . "</td>";
                 echo "</tr>";
             }
         }
-
     }
+}
 
 // TODO Función para imprimir las ubicaciones
-function imprimirUbicaciones($ubicaciones) {
+function imprimirUbicaciones($ubicaciones)
+{
     foreach ($ubicaciones as $ubicacion) {
-        echo $ubicacion . "<br>";
+        echo $ubicacion->getDireccion() . "<br>";
+        echo $ubicacion->getTelefono() . "<br>";
+        echo $ubicacion->getHorario() . "<br>";
     }
-
 }
 
 ?>
