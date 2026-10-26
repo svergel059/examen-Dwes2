@@ -61,9 +61,25 @@ function imprimirListaArticulos($articulos){
 }
 
 
-function imprimirPedido($pedido, $menu) {
-    //imprimir pedido en una tabla 
+funtion imprimirPedido($pedido, $menu) {
     
+    foreach ($pedido as $art) {
+        echo $art->getNombre() . "<br>";
+        echo $art->getPrecio() . "<br>";    
+    //tabla HTML que incluya nombre y precio de los artículos
+    echo "<table>";
+        echo "<tr>";
+            echo "<th>Nombre</th>";
+            echo "<th>Precio</th>";
+        echo "</tr>";
+        foreach ($menu as $art) {
+            if ($art->getNombre() == $art->getNombre()) {
+                echo "<tr>";
+                    echo "<td>" . $art->getNombre() . "</td>";
+                    echo "<td>" . $art->getPrecio() . "</td>";
+                echo "</tr>";
+            }
+        }
 
     }
 
@@ -72,6 +88,7 @@ function imprimirUbicaciones($ubicaciones) {
     foreach ($ubicaciones as $ubicacion) {
         echo $ubicacion . "<br>";
     }
+
 }
 
 ?>
@@ -96,3 +113,4 @@ imprimirPedido($pedido, $menu);
 
 <h2>Ubicaciones de Recogida:</h2>
 <?php imprimirUbicaciones($ubicaciones); ?>
+
