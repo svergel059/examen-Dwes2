@@ -52,9 +52,8 @@ $disponibles = Articulo::filtrarDisponibilidad($menu);
 
 function imprimirListaArticulos($articulos)
 {
-    //imprimir lista de articulos
     foreach ($articulos as $art) {
-        echo $art->getNombre() . "<br>";
+        echo $art->getNombre() . " ";
         echo $art->getPrecio() . "<br>";
     }
 }
@@ -63,7 +62,7 @@ function imprimirListaArticulos($articulos)
 function imprimirPedido($pedido, $menu)
 {
     foreach ($pedido as $art) {
-        echo "<table>";
+        echo "<table cellpadding='10 cellspaciong='10' border='1'>";
         echo "<tr>";
         echo "<th>Nombre</th>";
         echo "<th>Precio</th>";
@@ -74,6 +73,7 @@ function imprimirPedido($pedido, $menu)
                 echo "<td>" . $art->getNombre() . "</td>";
                 echo "<td>" . $art->getPrecio() . "</td>";
                 echo "</tr>";
+            
             }
         }
     }
